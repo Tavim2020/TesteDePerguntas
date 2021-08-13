@@ -11,6 +11,12 @@ const Button = styled('button')`
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.5s;
+
+    @media(max-width: 960px){
+        width: 30vw;
+        height: 15vw;
+        font-size: 4.1vw; 
+    }
 `;
 
 const Buttons = ({children, backgroundColor, color, marginRight}) => {

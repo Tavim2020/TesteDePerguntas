@@ -7,12 +7,16 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled('header')`
     width: 100vw;
-    height: 12vh;
+    height: 7vw;
     background-color: ${({theme}) => theme.palette.secondary.light};
     position: sticky;
     top: 0%;
     display: flex;
     align-items: center;
+
+    @media(max-width: 960px){
+        height: 24vw;
+    }
     
 `;
 
@@ -23,6 +27,10 @@ const ContainerHeader = styled('div')`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media(max-width: 960px){
+        width: 90%;
+    }
 `;
 
 const TitleContainer = styled('div')`
@@ -34,6 +42,15 @@ const TitleContainer = styled('div')`
     h2{
         font-family: ${({theme}) => theme.typography.fontFamily };
         color: ${({theme}) => theme.palette.text.primary};
+    }
+
+    @media(max-width: 960px){
+        width: 80%;
+        font-size: 4.5vw;
+        h2{
+            font-family: ${({theme}) => theme.typography.fontFamily };
+            color: ${({theme}) => theme.palette.text.primary};
+        }
     }
 `;
 

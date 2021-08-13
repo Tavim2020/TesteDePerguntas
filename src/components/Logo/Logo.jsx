@@ -1,10 +1,16 @@
 import React from 'react';
-import {styled} from '@material-ui/core/styles';
+import styled from 'styled-components';
 
-const LogoImg = styled('img')(({
-    width: '4vw',
-    height: '4vw',
-}));
+const LogoImg = styled('img')`
+    width: 4vw;
+    height: 4vw;
+
+    @media(max-width: 960px){
+        width: 19vw;
+        height: 19vw;
+        object-fit: cover;
+    }
+`;
 
 const Logo = () => {
     return (

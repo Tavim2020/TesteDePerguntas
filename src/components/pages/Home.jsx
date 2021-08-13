@@ -1,8 +1,7 @@
 import React from 'react';
-import { HomeContainer, ContainerButtons, ContainerPerguntas } from './style/HomeStyle';
+import { HomeContainer, ContainerButtons, ContainerPerguntas, ButtonModified } from './style/HomeStyle';
 import { GlobalContext } from '../../context/GlobalContext';
 import Buttons from '../Button/Buttons';
-import { Button } from '@material-ui/core';
 
 const Home = () => {
 
@@ -42,6 +41,10 @@ const Home = () => {
 
             setStateButton(true);
 
+            setTimeout(()=> {
+                window.location.reload();
+            }, 1000)
+
             setValuesOptionsClicked('')
             setValueCorrectQuestions('');
         }
@@ -62,7 +65,8 @@ const Home = () => {
         }
     }
 
-   
+
+
     function ConcluindoTestes(){
         const correctResponse = responseFetch.map((perguntas) => perguntas.correct_answer);
 
@@ -115,7 +119,7 @@ const Home = () => {
                     <Buttons 
                     backgroundColor={'#069e2c'}
                     color={'#ffffff'}
-                    marginRight={'5vw'}>
+                    marginRight={'10vw'}>
                         Start
                     </Buttons>
     
@@ -165,7 +169,7 @@ const Home = () => {
                     (
                         <p className={'acertos'}>Total de Acertos: {contAcertos}</p>
                     ) : stateButton && contAcertos === 0 &&(
-                        <p className={'acertos'}>Infelizmente você não acertou nenhuma resposta.</p>
+                        <p className={'acertos'}>Infelizmente você não acertou nenhuma pergunta.</p>
                     )}
                     
 
@@ -175,11 +179,9 @@ const Home = () => {
                     <div>
                            
                         {showButton &&
-                            <Button  onClick={ConcluindoTestes}
-                            style={{ backgroundColor: '#0077D4', color: '#fff', 
-                            width: '12vw', height: '7vh', fontSize: '1.2vw'}}>
+                            <ButtonModified  onClick={ConcluindoTestes}>
                                 Concluir
-                            </Button>
+                            </ButtonModified>
                         }
                     </div>
                 
